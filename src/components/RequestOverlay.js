@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Button, Item, Input, Icon} from 'native-base';
+import {H1, H3, Button, Item, Input, Icon} from 'native-base';
 
 const styles = StyleSheet.create({
   overlay: {
@@ -14,14 +14,6 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 20,
-  },
-  h1: {
-    fontSize: 30,
-    fontWeight: '800',
-    color: '#000',
-  },
-  normal: {
-    fontSize: 20
   },
   buttonPanel: {
     flexDirection: 'row',
@@ -75,18 +67,18 @@ export default class RequestOverlay extends Component<Props> {
   render() {
     return (
       <View style={styles.overlay}>
-        <Text style={styles.h1}>Need Cash</Text>
-        <Text style={styles.normal}>How much do you need?</Text>
+        <H1>Need Cash</H1>
+        <H3>How much do you need?</H3>
           <View style={styles.buttonPanel}>
             {this.buttonPanel()}
           </View>
-        <Text style={styles.normal}>Where do you need the cash</Text>
+        <H3>Where do you need the cash?</H3>
         <Item>
           <Icon name="magnifying-glass" type="Entypo"/>
           <Input placeholder="Set Pickup Location" />
         </Item>
-        <Text style={styles.normal}>How can you pay the Pony?</Text>
-        <Text>This is to ensure the Pony can accept the payment.</Text>
+        <H3>How can you pay the Pony?</H3>
+        <Text>This is to ensure your Pony can accept this payment.</Text>
         <Button block disabled>
           <Text style={styles.buttonDisabled}>Next Step</Text>
         </Button>
