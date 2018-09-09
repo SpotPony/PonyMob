@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {H1, H3, Button, Item, Input, Icon} from 'native-base';
+import PayButtons from './PayButtons';
+import DenomPanel from './DenomPanel';
+import {SP_ORANGE} from '../styles/colors';
 
 const styles = StyleSheet.create({
   overlay: {
@@ -14,26 +17,6 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 20,
-  },
-  buttonPanel: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  button: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderColor: 'rgb(253, 155, 50)',
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: 'rgb(253, 155, 50)',
-    fontWeight: '600',
-    fontSize: 20,
-  },
-  buttonDisabled: {
-    color: '#fff',
   },
   });
 
@@ -49,36 +32,25 @@ export default class RequestOverlay extends Component<Props> {
 
   }
 
-  buttonPanel() {
-    let btnPnl = []
-    for (let val in denoms) {
-        btnPnl.push(
-          (<Button style={styles.button}
-                    key={val}
-                    bordered
-                    onPress={this.currencySelect}>
-              <Text style={styles.buttonText}>{'$' + denoms[val]}</Text>
-            </Button>)
-        );
-    }
-    return btnPnl;
-  }
 
   render() {
+    console.log(`PayButtons: ${PayButtons}`)
     return (
       <View style={styles.overlay}>
         <H1>Need Cash</H1>
         <H3>How much do you need?</H3>
-          <View style={styles.buttonPanel}>
-            {this.buttonPanel()}
-          </View>
+        <DenomPanel values={denoms} />
+
         <H3>Where do you need the cash?</H3>
         <Item>
           <Icon name="magnifying-glass" type="Entypo"/>
           <Input placeholder="Set Pickup Location" />
         </Item>
+
         <H3>How can you pay the Pony?</H3>
+        <PayButtons />
         <Text>This is to ensure your Pony can accept this payment.</Text>
+        
         <Button block disabled>
           <Text style={styles.buttonDisabled}>Next Step</Text>
         </Button>
