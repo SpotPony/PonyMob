@@ -40,7 +40,7 @@ export default class MainRequest extends Component<Props> {
         }}
       >
       </MapView>
-      <RequestOverlay />
+      <RequestOverlay selectAmount={this.props.selectAmount}/>
     </View>
     )
   }

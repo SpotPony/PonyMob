@@ -10,6 +10,18 @@ const styles = StyleSheet.create({
     borderColor: SP_ORANGE,
     borderRadius: 10,
   },
+  buttonSelect: {
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderColor: SP_ORANGE,
+    borderRadius: 10,
+    backgroundColor: SP_ORANGE,
+  },
+  buttonTextSelect: {
+    color: "#fff",
+    fontWeight: '600',
+    fontSize: 20,
+  },
   buttonText: {
     color: SP_ORANGE,
     fontWeight: '600',
@@ -28,20 +40,26 @@ const styles = StyleSheet.create({
 
 export default class DenomPanel extends Component<Props> {
 
-  currencySelect() {
-
-  }
-
   render() {
-    let {values} = this.props;
-    const buttons = values.map((val) => (
-       <Button style={styles.button}
-                key={val}
-                bordered
-                onPress={this.currencySelect}>
-          <Text style={styles.buttonText}>{'$' + val}</Text>
-        </Button>
-    ))
+    let {values, selectAmount, reqAmount} = this.props;
+    const buttons = values.map((val) => {
+      let buttonStyle = reqAmount === val ?
+        styles.buttonSelect :
+        styles.button;
+
+      let buttonTextStyle = reqAmount === val ?
+        styles.buttonTextSelect :
+        styles.buttonText;
+
+      return (
+         <Button style={buttonStyle}
+                  key={val}
+                  bordered
+                  onPress={e => {selectAmount(val)}}>
+            <Text style={buttonTextStyle}>{'$' + val}</Text>
+          </Button>
+      )
+    })
 
     return (
       <View style={styles.buttonPanel}>

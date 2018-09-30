@@ -7,12 +7,19 @@
     "test": "jest"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
     "native-base": "^2.8.0",
     "react": "16.4.1",
     "react-native": "0.56.0",
+    "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera",
     "react-native-maps": "^0.21.0",
     "react-native-vector-icons": "^5.0.0",
-    "react-navigation": "^2.13.0"
+    "react-navigation": "^2.13.0",
+    "react-redux": "5.0.6",
+    "redux": "^4.0.0",
+    "redux-persist": "5.4.0",
+    "remote-redux-devtools": "0.5.0",
+    "remote-redux-devtools-on-debugger": "^0.8.0"
   },
   "devDependencies": {
     "babel-jest": "23.4.2",

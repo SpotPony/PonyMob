@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {H1, H3, Button, Item, Input, Icon} from 'native-base';
-import PayButtons from './PayButtons';
-import DenomPanel from './DenomPanel';
+import PayButtons from '../containers/PayButtonsContainer';
+import DenomPanel from '../containers/DenomPanelContainer';
 import {SP_ORANGE} from '../styles/colors';
 
 const styles = StyleSheet.create({
@@ -28,13 +28,11 @@ const denoms = [
 ]
 
 export default class RequestOverlay extends Component<Props> {
-  currencySelect(value) {
-
+  constructor(props) {
+    super(props);
   }
 
-
   render() {
-    console.log(`PayButtons: ${PayButtons}`)
     return (
       <View style={styles.overlay}>
         <H1>Need Cash</H1>
@@ -50,7 +48,7 @@ export default class RequestOverlay extends Component<Props> {
         <H3>How can you pay the Pony?</H3>
         <PayButtons />
         <Text>This is to ensure your Pony can accept this payment.</Text>
-        
+
         <Button block disabled>
           <Text style={styles.buttonDisabled}>Next Step</Text>
         </Button>
