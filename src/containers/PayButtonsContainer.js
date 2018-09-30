@@ -11,7 +11,7 @@ function bindActions(dispatch) {
 
 const mapStateToProps = state => {
   return {
-    reqServices: state.reqServices
+    reqServices: state.reqServices,
   }
 }
 

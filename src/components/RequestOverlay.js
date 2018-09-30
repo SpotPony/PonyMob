@@ -33,6 +33,9 @@ export default class RequestOverlay extends Component<Props> {
   }
 
   render() {
+    let {nextStep} = this.props;
+    let nextButtonStyle = nextStep ? {} : styles.buttonDisabled;
+
     return (
       <View style={styles.overlay}>
         <H1>Need Cash</H1>
@@ -49,8 +52,8 @@ export default class RequestOverlay extends Component<Props> {
         <PayButtons />
         <Text>This is to ensure your Pony can accept this payment.</Text>
 
-        <Button block disabled>
-          <Text style={styles.buttonDisabled}>Next Step</Text>
+        <Button block disabled={!nextStep} info={nextStep}>
+          <Text style={{color: "#fff"}}>Next Step: Take a Selfie</Text>
         </Button>
       </View>
   )}

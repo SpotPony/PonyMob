@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
 export default class MainRequest extends Component<Props> {
 
   render() {
+    let {reqAmount, reqServices} = this.props;
+    let nextStep = (reqAmount > 0 && reqServices && reqServices.length > 0);
+
     return (
     <View style ={styles.container}>
       <MapView
@@ -40,7 +43,7 @@ export default class MainRequest extends Component<Props> {
         }}
       >
       </MapView>
-      <RequestOverlay selectAmount={this.props.selectAmount}/>
+      <RequestOverlay nextStep={nextStep} />
     </View>
     )
   }

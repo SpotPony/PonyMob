@@ -10,7 +10,6 @@ import React, {Component} from 'react';
 import { createStackNavigator } from 'react-navigation';
 import MainRequest from './containers/MainRequestContainer';
 
-console.log(MainRequest)
 type Props = {};
 
 const RootStack = createStackNavigator({
