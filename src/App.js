@@ -9,11 +9,15 @@
 import React, {Component} from 'react';
 import { createStackNavigator } from 'react-navigation';
 import MainRequest from './containers/MainRequestContainer';
+import SelfieScreen from "./screens/SelfieScreen";
+import SelfiePreview from "./screens/SelfiePreview";
 
 type Props = {};
 
 const RootStack = createStackNavigator({
   MainRequest: MainRequest,
+  SelfieScreen: SelfieScreen,
+  SelfiePreview: SelfiePreview,
 }, {
   headerMode: 'none'
 })

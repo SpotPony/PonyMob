@@ -43,7 +43,8 @@ export default class MainRequest extends Component<Props> {
         }}
       >
       </MapView>
-      <RequestOverlay nextStep={nextStep} />
+      <RequestOverlay nextStep={nextStep}
+                      navigation={this.props.navigation} />
     </View>
     )
   }

@@ -52,7 +52,11 @@ export default class RequestOverlay extends Component<Props> {
         <PayButtons />
         <Text>This is to ensure your Pony can accept this payment.</Text>
 
-        <Button block disabled={!nextStep} info={nextStep}>
+        <Button block
+                disabled={!nextStep}
+                info={nextStep}
+                onPress={e => this.props.navigation.navigate('SelfieScreen')}
+                >
           <Text style={{color: "#fff"}}>Next Step: Take a Selfie</Text>
         </Button>
       </View>
