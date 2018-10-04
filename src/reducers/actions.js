@@ -1,6 +1,7 @@
 export const REQUEST_NEXT_1 = "request_next_1";
 export const REQUEST_SELECT_VALUE = "request_select_value";
 export const REQUEST_TOGGLE_SERVICE = "request_select_service";
+export const REQUEST_SAVE_SELFIE = "request_save_selfie";
 
 // Main Request Screen
 export const selectAmount = (value) => {
@@ -14,5 +15,12 @@ export const toggleService = (service) => {
   return {
     type: REQUEST_TOGGLE_SERVICE,
     service: service
+  }
+}
+
+export const saveSelfie = (dataUrl) => {
+  return {
+    type: REQUEST_SAVE_SELFIE,
+    dataUrl: dataUrl
   }
 }

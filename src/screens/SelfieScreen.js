@@ -40,7 +40,9 @@ export default class SelfieScreen extends Component {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options)
-      this.props.navigation.navigate('SelfiePreview', {params: {data: data.base64}})
+      this.props.navigation.navigate('SelfiePreview', {
+        params: {data: data.base64, uri: data.uri}
+      })
       console.log(data.uri);
     }
   };

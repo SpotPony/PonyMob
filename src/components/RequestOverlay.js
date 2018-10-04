@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {H1, H3, Button, Item, Input, Icon} from 'native-base';
 import PayButtons from '../containers/PayButtonsContainer';
 import DenomPanel from '../containers/DenomPanelContainer';
-import {SP_ORANGE} from '../styles/colors';
+import {SP_ORANGE, SOFT_BLUE, BUTTON_GREY} from '../styles/colors';
 
 const styles = StyleSheet.create({
   overlay: {
@@ -18,6 +18,10 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 20,
   },
+  buttonDisabled: {},
+  buttonEnabled: {
+    backgroundColor: SOFT_BLUE
+  }
   });
 
 const denoms = [
@@ -53,11 +57,12 @@ export default class RequestOverlay extends Component<Props> {
         <Text>This is to ensure your Pony can accept this payment.</Text>
 
         <Button block
+                style={nextButtonStyle}
                 disabled={!nextStep}
                 info={nextStep}
                 onPress={e => this.props.navigation.navigate('SelfieScreen')}
                 >
-          <Text style={{color: "#fff"}}>Next Step: Take a Selfie</Text>
+          <Text style={{color: "#fff", fontSize: 18, fontWeight: '600'}}>Next Step: Take a Selfie</Text>
         </Button>
       </View>
   )}
