@@ -5,7 +5,8 @@ import _ from "lodash";
 const initialState = {
   reqAmount: 0,
   reqLoc: null,
-  reqServices: []
+  reqServices: [],
+  reqSelfieSaved: false,
 }
 
 export default function(state=initialState, action) {
@@ -28,6 +29,11 @@ export default function(state=initialState, action) {
       }
       break;
 
+    case actions.REQUEST_SAVE_SELFIE:
+      return {
+        ...state,
+        reqSelfieSaved: true
+      }
     default:
       return state;
   }

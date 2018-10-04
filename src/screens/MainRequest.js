@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 import {Container} from 'native-base';
 import MapView from 'react-native-maps';
 import RequestOverlay from '../components/RequestOverlay';
+import ConfirmOverlay from '../components/ConfirmOverlay';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,8 +29,15 @@ const styles = StyleSheet.create({
 export default class MainRequest extends Component<Props> {
 
   render() {
-    let {reqAmount, reqServices} = this.props;
+    let {reqAmount, reqServices, reqSelfieSaved} = this.props;
     let nextStep = (reqAmount > 0 && reqServices && reqServices.length > 0);
+
+    let overlay = reqSelfieSaved ? (
+      <ConfirmOverlay />
+    ) : (
+      <RequestOverlay nextStep={nextStep}
+                      navigation={this.props.navigation} />
+    )
 
     return (
     <View style ={styles.container}>
@@ -43,8 +51,7 @@ export default class MainRequest extends Component<Props> {
         }}
       >
       </MapView>
-      <RequestOverlay nextStep={nextStep}
-                      navigation={this.props.navigation} />
+      {overlay}
     </View>
     )
   }

@@ -3,26 +3,15 @@ import {StyleSheet, Text, View} from 'react-native';
 import {H1, H3, Button, Item, Input, Icon} from 'native-base';
 import PayButtons from '../containers/PayButtonsContainer';
 import DenomPanel from '../containers/DenomPanelContainer';
+import Overlay from './Overlay';
 import {SP_ORANGE, SOFT_BLUE, BUTTON_GREY} from '../styles/colors';
 
 const styles = StyleSheet.create({
-  overlay: {
-    height: 400,
-    width: 400,
-    position: 'absolute',
-    bottom: 0,
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    paddingTop: 20,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: 20,
-  },
   buttonDisabled: {},
   buttonEnabled: {
     backgroundColor: SOFT_BLUE
   }
-  });
+});
 
 const denoms = [
   100,
@@ -41,7 +30,7 @@ export default class RequestOverlay extends Component<Props> {
     let nextButtonStyle = nextStep ? {} : styles.buttonDisabled;
 
     return (
-      <View style={styles.overlay}>
+      <Overlay>
         <H1>Need Cash</H1>
         <H3>How much do you need?</H3>
         <DenomPanel values={denoms} />
@@ -64,6 +53,6 @@ export default class RequestOverlay extends Component<Props> {
                 >
           <Text style={{color: "#fff", fontSize: 18, fontWeight: '600'}}>Next Step: Take a Selfie</Text>
         </Button>
-      </View>
+      </Overlay>
   )}
 }

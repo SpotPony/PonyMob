@@ -10,7 +10,8 @@ function bindActions(dispatch) {
 const mapStateToProps = state => {
   return {
     reqAmount: state.reqAmount,
-    reqServices: state.reqServices
+    reqServices: state.reqServices,
+    reqSelfieSaved: state.reqSelfieSaved
   }
 }
 
