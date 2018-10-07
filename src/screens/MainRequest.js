@@ -29,11 +29,13 @@ const styles = StyleSheet.create({
 export default class MainRequest extends Component<Props> {
 
   render() {
-    let {reqAmount, reqServices, reqSelfieSaved} = this.props;
+    let {reqAmount, reqServices, reqSelfieSaved, reqLoc} = this.props;
     let nextStep = (reqAmount > 0 && reqServices && reqServices.length > 0);
 
     let overlay = reqSelfieSaved ? (
-      <ConfirmOverlay />
+      <ConfirmOverlay amount={reqAmount}
+                      services={reqServices}
+                      location={reqLoc} />
     ) : (
       <RequestOverlay nextStep={nextStep}
                       navigation={this.props.navigation} />

@@ -3,10 +3,10 @@ import * as actions from "./actions";
 import _ from "lodash";
 
 const initialState = {
-  reqAmount: 0,
+  reqAmount: 100,
   reqLoc: null,
-  reqServices: [],
-  reqSelfieSaved: false,
+  reqServices: ['square-cash'],
+  reqSelfieSaved: true,
 }
 
 export default function(state=initialState, action) {
