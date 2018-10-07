@@ -32,7 +32,20 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 80,
     height: 80
+  },
+  helpCard: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    right: 20,
+    paddingTop: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 20,
+    borderRadius: 5,
+    backgroundColor: 'rgba(255,255,255,0.8)',
   }
+
 });
 
 export default class SelfieScreen extends Component {
@@ -63,6 +76,10 @@ export default class SelfieScreen extends Component {
             console.log(barcodes)
           }}
       >
+      <View style={styles.helpCard}>
+        <H1>Take A Selfie</H1>
+        <Text>This helps the Pony spot you. You’ll also get a selfie of your Pony when they accept your request.</Text>
+      </View>
       <View style={{backgroundColor: "rbga(1,1,1,0)", flex: 0, flexDirection: 'row', justifyContent: 'center',}}>
       <TouchableOpacity
           onPress={this.takePicture.bind(this)}
