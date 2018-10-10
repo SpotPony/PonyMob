@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "onyob-20181009212700-authRole",
+            "UnauthRoleArn": "arn:aws:iam::161417851467:role/onyob-20181009212700-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::161417851467:role/onyob-20181009212700-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "onyob-20181009212700-deployment",
+            "UnauthRoleName": "onyob-20181009212700-unauthRole",
+            "StackName": "onyob-20181009212700",
+            "StackId": "arn:aws:cloudformation:us-east-1:161417851467:stack/onyob-20181009212700/bbb872f0-cc44-11e8-abdc-500c219a1afd"
+        }
+    }
+}

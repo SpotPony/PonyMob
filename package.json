@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "aws-amplify": "^1.1.6",
-    "aws-amplify-react": "^2.0.7",
+    "aws-amplify-react-native": "^2.0.6",
     "lodash": "^4.17.11",
     "native-base": "^2.8.0",
     "react": "16.4.1",

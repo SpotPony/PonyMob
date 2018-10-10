@@ -1,36 +1,52 @@
 {
 	"providers": {
 		"awscloudformation": {
-			"AuthRoleName": "onyob-20180823212046-authRole",
-			"UnauthRoleArn": "arn:aws:iam::161417851467:role/onyob-20180823212046-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::161417851467:role/onyob-20180823212046-authRole",
+			"AuthRoleName": "onyob-20181009212700-authRole",
+			"UnauthRoleArn": "arn:aws:iam::161417851467:role/onyob-20181009212700-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::161417851467:role/onyob-20181009212700-authRole",
 			"Region": "us-east-1",
-			"DeploymentBucketName": "onyob-20180823212046-deployment",
-			"UnauthRoleName": "onyob-20180823212046-unauthRole",
-			"StackName": "onyob-20180823212046",
-			"StackId": "arn:aws:cloudformation:us-east-1:161417851467:stack/onyob-20180823212046/136190a0-a755-11e8-986b-500c286fcc61"
+			"DeploymentBucketName": "onyob-20181009212700-deployment",
+			"UnauthRoleName": "onyob-20181009212700-unauthRole",
+			"StackName": "onyob-20181009212700",
+			"StackId": "arn:aws:cloudformation:us-east-1:161417851467:stack/onyob-20181009212700/bbb872f0-cc44-11e8-abdc-500c219a1afd"
 		}
 	},
 	"auth": {
-		"ponyMobAuth": {
+		"cognitobe8e90e1": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/onyob-20180823212046-deployment/amplify-cfn-templates/auth/ponyMobAuth-cloudformation-template.yml",
-				"logicalId": "authponyMobAuth"
+				"s3TemplateURL": "https://s3.amazonaws.com/onyob-20181009212700-deployment/amplify-cfn-templates/auth/cognitobe8e90e1-cloudformation-template.yml",
+				"logicalId": "authcognitobe8e90e1"
 			},
-			"lastPushTimeStamp": "2018-10-07T03:07:15.892Z",
+			"lastPushTimeStamp": "2018-10-10T04:42:47.019Z",
 			"output": {
-				"AppClientSecret": "tpcj1v8tq8rlsg8u1b5sua34df3klbsjpfcc7hcva9f3k01v0hc",
-				"UserPoolId": "us-east-1_tZf3T68OH",
-				"AppClientIDWeb": "10r2o1cto62jldcugh1t9vecnt",
-				"AppClientID": "15ak5o6svr79rk8t6gi4he1c7q",
-				"IdentityPoolId": "us-east-1:b9f6f4fd-3c4e-4ec2-961c-26a26afd4364",
-				"IdentityPoolName": "pmIdPool",
-				"UserPoolName": "pmUserPool"
+				"AppClientSecret": "119fdiftac0d3udlsnoopsf4llja1tfdliv5m0lv8b6vpbhbaq8a",
+				"UserPoolId": "us-east-1_t9kuCaCdX",
+				"AppClientIDWeb": "420hqu3g5nbl6qgok3dsrdpqli",
+				"AppClientID": "25vmso1ka24ii5mq68lbsmitud",
+				"IdentityPoolId": "us-east-1:b589f1b6-efae-4145-b334-aea7868dd0b8",
+				"IdentityPoolName": "cognitobe8e90e1_identitypool_be8e90e1",
+				"UserPoolName": "cognitobe8e90e1_userpool_be8e90e1"
 			},
-			"lastPushDirHash": "YCVdNXvj7mZjnV6l7npNk1PGBz8=",
-			"[object Object]": {}
+			"lastPushDirHash": "6aRPEOjbVnXbTRgTvbuwieUlW3M="
+		}
+	},
+	"analytics": {
+		"ponymob": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/onyob-20181009212700-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
+				"logicalId": "analyticsponymob"
+			},
+			"lastPushTimeStamp": "2018-10-10T04:42:47.019Z",
+			"output": {
+				"appName": "ponymob",
+				"Region": "us-east-1",
+				"Id": "72adfa99f00847c19dfd6543a619cde4"
+			},
+			"lastPushDirHash": "6EI4iVFDCiACMaa5GYcg6jIRCFs="
 		}
 	}
 }

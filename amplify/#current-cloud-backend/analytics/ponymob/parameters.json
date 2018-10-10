@@ -1,0 +1,11 @@
+{
+    "appName": "ponymob",
+    "roleName": "pinpointLambdaRolea4c9e389",
+    "cloudWatchPolicyName": "cloudWatchPolicya4c9e389",
+    "pinpointPolicyName": "pinpointPolicya4c9e389",
+    "authPolicyName": "pinpoint_amplify_a4c9e389",
+    "unauthPolicyName": "pinpoint_amplify_a4c9e389",
+    "authRoleName": "onyob-20181009212700-authRole",
+    "unauthRoleName": "onyob-20181009212700-unauthRole",
+    "IAMPrefix": "161417851467"
+}
