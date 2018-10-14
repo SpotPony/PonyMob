@@ -2,12 +2,6 @@
 import * as actions from "./actions";
 import _ from "lodash";
 
-const initialState = {
-  reqAmount: 100,
-  reqLoc: null,
-  reqServices: ['square-cash'],
-  reqSelfieSaved: true,
-}
 
 export default function(state=initialState, action) {
   switch(action.type) {
@@ -33,6 +27,16 @@ export default function(state=initialState, action) {
       return {
         ...state,
         reqSelfieSaved: true
+      }
+    case actions.SET_USER_LOCATION:
+      return {
+        ...state,
+        userLocation: {
+          longitude: action.userLocation.coords.longitude,
+          latitude: action.userLocation.coords.latitude,
+          latitudeDelta: 0.015,
+          longitudeDelta: 0.0121,
+        }
       }
     default:
       return state;

@@ -2,11 +2,11 @@ import devTools from 'remote-redux-devtools';
 import { createStore, applyMiddleware, compose } from "redux";
 import { persistStore } from 'redux-persist';
 import reducers from "../reducers";
+import thunk from "redux-thunk";
 
 export default function configureStore(initialState) {
-  const middleware = [];
   const enhancer = compose(
-    // applyMiddleware(...middleware),
+    applyMiddleware(thunk),
     devTools({
       name: 'ponymob',
       realtime: true

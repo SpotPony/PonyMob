@@ -27,9 +27,17 @@ const styles = StyleSheet.create({
 });
 
 export default class MainRequest extends Component<Props> {
+  componentWillMount() {
+    console.log('calling getUserLocation');
+    this.props.getUserLocation()
+  }
 
   render() {
-    let {reqAmount, reqServices, reqSelfieSaved, reqLoc} = this.props;
+    let { reqAmount,
+          reqServices,
+          reqSelfieSaved,
+          reqLoc,
+          userLocation } = this.props;
     let nextStep = (reqAmount > 0 && reqServices && reqServices.length > 0);
 
     let overlay = reqSelfieSaved ? (
@@ -45,12 +53,7 @@ export default class MainRequest extends Component<Props> {
     <View style ={styles.container}>
       <MapView
         style={styles.map}
-        region={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.015,
-          longitudeDelta: 0.0121,
-        }}
+        region={userLocation}
       >
       </MapView>
       {overlay}
