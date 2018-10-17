@@ -6,6 +6,12 @@ Amplify.configure({
     userPoolId: 'us-east-1_E4VwWb8Bp',
     userPoolWebClientId: '70g5g51kacbcgdto0iuj92pv76',
     region: 'us-east-1'
+  },
+  Analytics: {
+    AWSPinpoint: {
+      region: 'us-east-1',
+      appId: '51d51fc648944dc5bef405d3d8417a1d'
+    }
   }
 });
 import {withAuthenticator} from 'aws-amplify-react-native';
