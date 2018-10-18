@@ -4,12 +4,20 @@ import {H1, H3, Button, Item, Input, Icon} from 'native-base';
 import PayButtons from '../containers/PayButtonsContainer';
 import DenomPanel from '../containers/DenomPanelContainer';
 import Overlay from './Overlay';
-import {SP_ORANGE, SOFT_BLUE, BUTTON_GREY} from '../styles/colors';
+import {SP_ORANGE,
+        SOFT_BLUE,
+        BUTTON_GREY,
+        DEFAULT_TEXT} from '../styles/colors';
 
 const styles = StyleSheet.create({
   buttonDisabled: {},
   buttonEnabled: {
     backgroundColor: SOFT_BLUE
+  },
+  label: {
+    fontSize: 18,
+    fontWeight: '400',
+    color: DEFAULT_TEXT
   }
 });
 
@@ -31,20 +39,19 @@ export default class RequestOverlay extends Component<Props> {
 
     return (
       <Overlay>
-        <H1>Need Cash</H1>
-        <H3>How much do you need?</H3>
+        <H1 styles={{fontSize: 21}}>Need Cash</H1>
+        <H3 style={styles.label}>How much do you need?</H3>
         <DenomPanel values={denoms} />
 
-        <H3>Where do you need the cash?</H3>
-        <Item>
+        <H3 style={styles.label}>Where do you need the cash?</H3>
+        <Item style={{marginBottom: 10}}>
           <Icon name="magnifying-glass" type="Entypo"/>
-          <Input placeholder="Set Pickup Location" />
+          <Input placeholder="Current Location" />
         </Item>
 
-        <H3>How can you pay the Pony?</H3>
+        <H3 style={styles.label}>How can you pay the Pony?</H3>
+        <Text style={{marginBottom: 7}}>This is to ensure your Pony can accept this payment.</Text>
         <PayButtons />
-        <Text>This is to ensure your Pony can accept this payment.</Text>
-
         <Button block
                 style={nextButtonStyle}
                 disabled={!nextStep}
